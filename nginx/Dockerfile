@@ -1,4 +1,4 @@
 FROM nginx:1.13
 
-ADD ./nginx.conf /etc/nginx/nginx.conf
-ADD ./conf.d/* /etc/nginx/conf.d/
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./conf.d /etc/nginx/conf.d
