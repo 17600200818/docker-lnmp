@@ -12,7 +12,7 @@ php:
   links:
     - "mysql"
   volumes:
-    - ~/home/var/www:/var/www
+    - /var/www:/var/www
 
 nginx:
   build: ./nginx
@@ -21,7 +21,10 @@ nginx:
   links:
     - "php"
   volumes:
-    - ~/home/var/www:/var/www
+    # app
+    - /var/www:/var/www
+    # nginx config
+    - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
 
 redis:
   build: ./redis
